@@ -1,0 +1,38 @@
+Formula of TF-IDF:
+
+TF-IDF (Score ) = TF x IDF
+
+Ex : (hello)
+		= TF(hello) x IDF (hello)
+		= 0.1667 x 2.3219
+TF-IDF(hello)	= 0.387060
+ 
+
+
+
+Determination of TF :
+
+TF = Freqency Term/ [Maximum it apper in any document]
+
+Ex : hello
+
+TF (hello) 	= (hello) word occur in particular article / Maximum no of (hello) word occur in hole articles 
+		= 5/ 30
+		= 1/6
+		= 0.1667
+
+
+
+Determination of IDF :
+
+IDF  =  log (N / nT )
+
+Ex: hello
+
+IDF (hello)  	= log ( No of articles/ How much no of artciles contain word (hello))
+		= log(100/20)
+		= log(5)
+		= 2.3219
+
+
+
