@@ -1,0 +1,3 @@
+Installing TensorFlow:
+
+	pip install --upgrade tensorflow-gpu
