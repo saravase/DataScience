@@ -1,0 +1,14 @@
+Neurons:
+	It contains of set weights and Inputs.
+	Then , caluculate sum of (wights* inputs)+ Bias
+	Then, it will send to activation functions.
+	Finally  the activation function return the neurons output.
+
+Neural Network :
+	It contains three network :
+		Input Layers
+		Hidden Layers
+		Output Layers
+	Neurons is used to minimize the error.
+	Way of adjust the weight and bias.
+	If the network contains more then 2 Layers, it is called Deep neural network.
