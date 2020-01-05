@@ -1,0 +1,334 @@
+Data preparation:
+
+	What is ML?
+		Work with huge data
+		Find pattern
+		Make intelligent decisions
+
+	Types of ML?
+		Classification
+		Regression
+		Clustering
+		Dimentionality Reduction
+
+	Problems with Data?
+
+	I. Insufficient data
+
+    	Problems:
+        	1.Poor prediction
+        	2.Overfitting  - Read too much info from little data
+        	3.Underfitting - Read very low info from little data
+
+    	Solutions:
+        	1.Need more data sources
+        	2. Some other options:
+            	a.Model complexity
+                	Ex: NB, Logistic regression
+                    	Ensemble Learning
+                        	create model using multiple ML algorithms
+            	b.Transfer learning
+                	Ex: Deep Learning 
+                    	    create model using already learned dataset
+            	c.Data augmentation
+                	Ex: Image processing
+                    	    scaling, rotation, affine transforms
+            	d.Synthetic data
+                	Ex: Artificially generate new data
+
+	II. Too much data
+    	problems:
+        	1.Curse of dimentionality
+           		Solutions:
+                	Feature selection - Find best features 
+                	Feature Engineering - Aggrigating low level data to 	useful feature [Concept Hierarchy]
+                	Dimnetionality Reduction - Reduce complexity without	losing information 
+
+        	2.Outdated historical data
+            	i.Cause:
+                	Lead Concept Drift
+                    	Relationship of X and Y changes over time
+                    		Ex: Financial trading
+            	ii.Solutions: Need human expert 
+
+	III. Non representative data [Bias]
+    	Problems:
+        	Make impact in model building
+        	Increate the time cleaning and processing
+        	Oversampling and Undersampling
+
+	IV. Missing data and Outliers:
+    	Problems:
+        	Increase the time of data cleaning
+
+	V. Duplicate data
+    	Problems:
+        	Real time streaming
+    	Solutions:
+        	Remove the duplicate data
+
+	Missing data and Outliers
+
+		I.Missing data
+    		i. Deletion - Remove the missing values
+            	problems:
+                	Some time increase the bias
+
+    		ii. Imputation - Fill the missing values
+            	Process:
+                	1.mean
+                	2.median
+                	3.mode
+                	4.nearby value
+            	Types:
+                	1.Univariate - DU
+                	2.Multivariate - DU
+                	3.Hot deck
+                    	Sort records based on any criteria
+                    	Fill missing prior available value
+                	4.Mean substitution
+                	5.Regression
+                    	Find the missing column based on other column
+
+		II.Outliers
+    		
+    		Process:
+        		Identifying Outliers
+            		Distance from mean
+            		Distance from fitted line
+        		Copying with Outliers
+            		Drop
+            		Cap/Floor - [3 to -3]
+            		Set to mean
+    		
+    		Methods:
+				Find Varience, SD
+			
+			Oversampling and Undersampling
+			
+				Problems:
+    				i. Reduce Accuracy
+    				ii. Increase the precision and recall
+
+ 				Solutions:
+     				i.Case studies
+     				ii.Stratified sampling
+			
+			Overfitting and Underfitting
+			
+				Overfit Problems:
+    				Memarized model
+    				Low traning erro
+    				Does not work weel in real world
+    				High test error
+
+				Underfit Problems:
+    				Unable to capture relationship
+    				Perform poor in training
+
+	Types of data in ML
+		Numeric
+		Ratio scale
+   			Ex:
+   				1 apple - 20 2 apple -40   1:2
+
+		Interval scale
+    		Ex:
+        		0F != 'no temperature'
+				
+		Categorical
+			Ordinal 
+			Nominal
+
+		Numeric Data
+			Discrete  - Cannot measures but countable				Continuous - Cannot countable but measurable
+
+	Feature Scaling
+		Scaling
+			All the values  between  particular min and max value
+		Standardization
+			Center data round the mean and divide each value by SD
+
+		Categories as Nominal Data
+			Label Encoding
+				Numerical id given for each categorical data
+			One Hot Encoding	
+				Seperate column given to each categories 0 or 1.
+
+	Feature Selection
+		Curse of Dimentionality
+			no of x variables grow raise several problems
+
+	Problems in Visualization
+    	EDA is used to build model
+        	Identify outliers
+        	Detect anomalies
+        	Choose relationship
+
+       Problems:
+           More then three dimensional is very hard for visualization
+
+	Problems in Training
+    	Find best model parameters
+    	Complex model had thousand of parameters
+
+	Problems in Prediction
+
+    	find the training instances similar to the testing instances
+    	Dimentinality high, search space high
+    	variable x high, overfitting high
+
+Reducing Complexity
+
+Feature Selection
+
+Filter Methods
+    - Independently selected the features
+    - Either univariate or multi variate
+  Techniques:
+      Varience thresholding  - high
+      Chi square test - check   predictive power
+      Anova
+      Mutual information
+
+Wrapper Methods
+
+    - Somewhere between filter and embedded feature selection
+    - Forward and backward stepwise regression
+
+Embedded Methods
+    - Features selected during model traning
+
+    Techniques
+        Decision Trees
+        Lasso Regression
+            - Mitigate the overfitting
+
+Dimentionality Reduction
+	Projection  
+    	- Find better axes and data
+    	-PCA , Factor Analysis
+	Manifold Learning
+    	- unroll the data
+    	- swiss roll or S-Curve
+    	- Isomap, Kernel PCA
+	AutoEncoding
+    	- Simplify the data using the neural network
+    	- Extract efficient representations of complex data. 
+
+	Drawbacks:
+
+    	- Loss of information
+    	- Performance degradation
+    	- Computational intensive
+    	- Complex pipelines
+    	- Transformed features hard to interpret
+
+Hands On:
+
+Univariate Feature Imputation:
+	sklearn.impute import SimpleImputer:
+		-	most-frequent
+		-	mean
+		-	median
+		-	mode
+		-	constant
+
+MultiVariate Feature Imputation:
+	sklearn.impute import IterativeImputer
+
+Missing Indicator:
+	sklearn.impute import MissingIndicator
+
+Data Selection:
+	sklearn.model_selection import train_test_split
+	
+Regression:
+	sklearn.linear_model import LinearRegression
+
+Regression R2_score:
+	sklearn.metrics import r2_score
+
+Categorical Data:
+	sklearn.preprocessing import LabelEncoder
+	sklearn.preprocessing import OneHotEncoder
+
+Feature Scaling:
+	sklearn.preprocessing import MinMaxScaler
+	sklearn.preprocessing import StandardScaler
+	sklearn.preprocessing import Normalizer
+		-	l1
+		-	l2
+		-	max
+	sklearn.preprocessing import Binarizer
+
+Classifiation:
+	sklearn.linear_model import LogisticRegression
+	sklearn.tree import DecisionTreeClassifier
+
+Classification Accuracy Score:
+	sklearn.metrics import accuracy_score
+
+Pipeline:
+	sklearn.pipeline import make_pipeline
+
+Transformer:
+	sklearn.compose import ColumnTransformer
+
+Discretization:
+	pd.cut()
+	sklearn.preprocessing import KBinsDiscretizer
+
+Feature Selection:
+
+Statistical Methods:
+
+	pd.corr()
+	from yellowbrick.target import FeatureCorrelation
+		-	pearson
+		- 	mutual_info-classification
+	Based on missing values remove features
+	sklearn.preprocessing import minmax_scale
+	sklearn.feature_selection import VarienceThreshold
+
+Handling MultiCollinearity:
+	Some no of features has same importance in dataset.
+	It will increase the overfitting.
+	So, remove some features based on corr() function.
+
+	statsmodels.stats.outliers_influence import variance_inflation_factor
+
+		1    Not correlated with other features
+		1-5  Moderately correlated with other features
+		>5   Highly correlated with other features
+
+	sklearn.feature_selection import chi2, SelectKBest
+	sklearn.feature_selection import f_classif, SelectPercentile
+
+Wrapper Methods:
+
+	sklearn.feature_selection import RFE
+	RFE - Regressive Feature Elemination
+
+	mlxtend.feature_selection import SequentialFeatureSelector
+	sklearn.ensemble import RandomForestClassifier
+		-	forward = True
+		- 	forward = False
+
+Embedded Methods:
+	sklearn.linear_model import Lasso
+		-	lasso.coef_
+			*	Important predictors are close to 0.
+
+	sklearn.tree import DecisionTreeRegressor
+
+		-	tree.feature_importances_
+			*	High importance value 
+
+
+
+
+
+
+
+
