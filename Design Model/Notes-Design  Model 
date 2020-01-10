@@ -1,0 +1,309 @@
+Sentiment Analysis Systems
+Polarity
+	Positive or Negative
+Subjectivity
+	Subjective or Objective
+Aspects
+	Part or Whole
+Binary Classification
+	Spam or Ham
+	Cancer or Not Cancer
+Types:
+Rule Based Classifier
+	Rules are formed by Experts
+
+	Corpus - Humen Experts - Rule Based Classifier
+ML Based Classifier
+	Pattern are found in aggrigate data
+
+	Corpus - Classification Algorithm - ML Based Classifier
+ML vs Rule
+    1. Dynamic - Static
+    2. Less expert skill - High Expert skill
+    3. Update happen simply Update the rules update the corpus - every time
+    4. high quality data - Low
+    5. explicit training step- No Need
+    6. Cannot operate without- No instance need instance
+Rule Based Analysis
+	Problem statement is simple
+	Rules are staight forward and easily codified
+	Rules are changed inprequently
+	Few problem instance to train ML models
+ML Based Analysis
+	Problem statement reasonably complex
+	Hard to find pattern
+	Decsion varaibles are sensitive
+	Large corpus available
+Machine Learning
+	Huge data
+	Find Pattern
+	Make decision
+Fature Vectors
+	Each attributes in a corpus called features
+	Each datapoint is a list of vector
+Traditional ML Based:
+	Experts used to decide what features to pay attention to.
+Representational ML Based:
+	Figure out themeselves what features to pay attention to. 
+Understanding Deep Learning [Representation]
+Traditional ML:
+	Corpus - Feature selection by experts - classification Algorithm - ML Based
+Representational ML:
+	Corpus - Feature Selection Algorithm - Classification algorithm - Representational Based ML
+Ex: 
+    Neural network
+Deep Learning
+	Algorithms that learn what features matter
+Neural Network
+	This is the base of deep learning
+	It contains many layers
+Neurons
+	Methametical functions
+	Ex:
+		Corpus of images - pixels/edges/corners/parts - classifiers
+ 		Corpus of images - layer1/ layer2... - classifiers
+       Weight of neurons:
+		Neurons interconnected using weight
+		Oustput of second neurons is more sensitive  of output of first neurons.
+		stronger the connection - High weight
+Traditional vs Deep Learning:
+	Dynamic        -   Also Dynamic
+    1. More skill need feature selection - Less skill
+    2. experts select features - algorithm select features
+    3. work well numeric - work well numeric
+    4. Not specialized in images and text - Specialized in images, voices, videos and text data
+    5. Explicit algorithm - No explicit
+    6. optimization - parametes - optimization - weight and bias
+
+Traditional ML algorithms:
+	Linear Regression
+	Support Vector Machine
+	Decsion Tree
+Deep Learning Models
+	Fully connected , dense neural ntworks
+	Convoluational Neural network - Images
+	Recurrent Neural Network - NLP, text
+ML Broad Problem Categories
+	Classification
+	Regression
+	Clustering
+	Dimentionality Reduction
+Classification Use Cases:
+	Email : spam or ham?
+	Images : cat , dog or mouse ?
+	Text: Positive or Negative or Netrual
+Regression Use Cases:
+	Predict stock price
+	Predict house price
+	Predict car millage
+Clustering Use Cases:
+	Find Some related category documents
+	Find who are interested in  sports
+Dimentionality Reduction Use Cases:
+	Find stock movements
+	Preprocess data find robust models
+	Improve the performance of the model
+Recommendation Systems:
+	Recommend products to users
+Association Rules Learning:
+	Detect transactions that occure together
+Reinforcement Learning:
+	Train agent to navigate uncertain environment
+Type of ML:
+Supervised Learning:
+	Training data had label
+	Contain both x and y
+	y = f(x)
+Unsupervised Learning:
+	Training data doesn't have label
+	Contain only x
+	Self discover the pattern
+ML Technique | Use Cases
+    1. unlabelled data | Find individual photos
+    2. Latend factor anaysis | Find common drivers of 200 stocks
+    3. Clustering | Find relevent document in corpus
+    4. Anomaly Detection | Flag fradulant credit card transactions
+    5. Quantization | Compress true color 24 bit to 8 bit
+Reinforcement Learning:
+	If you ask the wrong question , get the wrong answer.
+	There is no x.
+	Train decision makers to take actions to maximize rewards in an uncertain environment
+	Decision Makers - Agent [Robots]
+	Observe the environemnt
+	Take Actions - Policy [Robots movement]
+	Gets rewards
+UseCases:
+    self navigating robotes
+    Text mining - Generate summary
+    Healthcare - Optimize medications dosing
+Reinforcement vs Supervised/ Un:
+    1. Choose the best actions get rewards | Predict or classify
+    2. Environemnt unknown environment | known environment
+    3. In trainig explore the environment | Find the pattern
+    4. Goal determining the best policy | Goal determining the best model
+Recommendation Systems:
+Types:
+    	Content Based:
+	Based on rating
+	Ex:
+    	Views  
+    	Purchases
+  	Collaborative:
+	Based on other users
+ 	Hybrid:
+	Combination of both above
+Regression Models
+Cause and Effect Analysis
+	 Cause  = X
+	 Effect = Y
+
+ 	Find best fit line using MSE
+ 	Residules = y actual - ypred
+Choosing Regression Algorithms:
+
+Feature Size Dataset Size Algorithm
+
+    1. Many - Many Stochastic Gradient Descent SGD
+    2. Many Small Least Angle Regression (LARS)
+    3. Medium Medium Lasso, Elastic Net
+    4. Many Medium Ridge
+    5. Medium Small Support Vector Regression (Linear Kernel
+    6. Few Small Support Vector Regression (RPF Kernel)
+    7. Medium Large Support Vector Regression(Linear Kernel)
+    8. Few Medium Decision Tree and Ensemble Methods
+    9. Few Large Ordinary Least Square(OLS)
+Evaluation Results of Regression
+Adjusted R2
+	Many featues has  dataset. This is better compared to r2.
+	Irrelevent variables are deleted.
+Residuals
+F-Statistics
+	Based on Hypothesis testing
+T-Statistics
+	Based on Hypothesis testing
+R2
+	High better model
+	High in train / low in test = Overfit
+T- Test Vs F- Test
+    1. Each regression Coef | Whole model
+    2. Null Hypothesis 0 | Null Hypothesis is 0
+    3. Evulate each variable | Evaluate overall model
+    4. Widely used | Rarely used
+Classification
+Types of Classification:
+Binary
+	Yes / No
+Multi Class
+	Digit Classification [0 to 9]
+	Logistic Regression
+	Support Vector Machines
+	Naive Bayes
+	One vs all: train 10 binary classifiers
+	    0 or not 0
+	    1 or not 1
+	    2 or not 2
+
+	One vs One: train 45 binary classifiers
+	    0 vs 1, 0 vs 2, 0 vs 3 and so on
+	 	N(N-1)/2 = 10*(9)/2 = 45
+Multi Label
+	(True, Female), (False, Female)
+Multi Output
+	Combination of both multi class and multi label
+Choosing Classification Algorithms:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classification Evaluation:
+	Confusion Matrix:
+		
+	
+Predicted/
+Actual
+Cancer
+No Cancer
+Cancer
+TP  10
+FN  4
+No Cancer
+FP  5
+TN  1000
+
+Accuracy = TP + TN / No of Instances
+
+Precision : Accuracy of flag no cancer
+	= TP/ TP+FP 
+	
+Recall : Accuracy of flag cancer
+	= TP/ TP + FN
+
+Clustering:
+
+Use Cases:
+	May like the same kind of music
+	May have gone to the same school
+	May have kids an same age
+
+Distance is used to divide the cluster
+DataSet/
+Features
+Small
+Medium
+Large
+Many
+Mean-shift
+Affinity Propogation
+
+Birch Aggiomerative
+Moderate
+
+
+K means DBSCAN
+Few
+
+Spectral
+
+
+Curse of dimentionality reduction
+	Problem in visualization
+		EDA Exploratory Data Analytics
+			Find Outilers
+			Anomaly Detection
+			Find Relationship
+		Cauese:
+			More Features 
+	Problem in Traning
+		Causes:
+			Time Consuming
+			No of Parameters
+			High Cost real world
+	Problem in Prediction
+		Causes:
+			Dimentionality grows, search space excited
+
+	Reducing Complexity:
+		Feature Selection :
+			Variance Thresholding
+			ANOVA
+			Mutual Info Regression 
+		Dimentionality Reduction:	
+			Projection - linear
+				PCA, LDA, QDA
+			Manifold Learning – Non linear
+				Swiss Roll, S Curve
+				Isomap, Kernel PCA
+			AutoEncoding – video, images
+				Neural Network
