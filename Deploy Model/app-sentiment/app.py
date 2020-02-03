@@ -52,7 +52,7 @@ x = t_vect.fit_transform(x)
 data = pd.concat([
     data['body_len'],
     data['punc%'],
-    pd.DataFrame(x.toarray()
+    pd.DataFrame(x.toarray(),
     data['label']
 )], axis=1)
 
@@ -62,3 +62,23 @@ y = data['label']
 classifier = SVC(kernel='rbf', gamma=1, C=0.1)
 classifier.fit(x, y)
 
+@app.route('/')
+def home():
+	return render_template('home.html')
+
+@app.route('/predict', method=['POST'])
+def predict():
+	if request.method == 'POST':
+		message = request.form['message']
+		req_data = [message]
+		vect = pd.DataFrame(t_vect.transform(req_data).toarray())
+		body_len = pd.DataFame([len(req_data) - req_data.count(' ')])
+		punct = pd.DataFrame([count_punct(req_data)])
+		total_data = pd.concat([
+			body_len, punct, vect
+			], axis=1)
+		my_prediction = classifier.predict(total_data)
+	return render_template('predict.html', prediction=my_prediction)
+
+if __name__ == '__main__':
+	app.run(post=4000)
