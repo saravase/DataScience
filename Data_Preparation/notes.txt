@@ -207,7 +207,7 @@ Embedded Methods
 Dimentionality Reduction
 	Projection  
     	- Find better axes and data
-    	-PCA , Factor Analysis
+    	- PCA , Factor Analysis
 	Manifold Learning
     	- unroll the data
     	- swiss roll or S-Curve

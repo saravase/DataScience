@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import re
 import string
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
 from nltk.stem.porter import PorterStemmer
 
 def remove_pattern(input_text, pattern):
@@ -24,6 +24,7 @@ app = Flask(__name__)
 # Data Collection
 
 data = pd.read_csv('sentiment.tsv', sep='\t')
+print('Data : ', data.shape)
 
 # Data Cleaning 
 
@@ -52,9 +53,10 @@ x = t_vect.fit_transform(x)
 data = pd.concat([
     data['body_len'],
     data['punc%'],
-    pd.DataFrame(x.toarray(),
+    pd.DataFrame(x.toarray()),
     data['label']
-)], axis=1)
+], axis=1)
+data.dropna(inplace=True)
 
 # Initialize Classifier
 x = data.drop('label', axis=1)
@@ -66,13 +68,13 @@ classifier.fit(x, y)
 def home():
 	return render_template('home.html')
 
-@app.route('/predict', method=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
 	if request.method == 'POST':
 		message = request.form['message']
 		req_data = [message]
 		vect = pd.DataFrame(t_vect.transform(req_data).toarray())
-		body_len = pd.DataFame([len(req_data) - req_data.count(' ')])
+		body_len = pd.DataFrame([len(req_data) - req_data.count(' ')])
 		punct = pd.DataFrame([count_punct(req_data)])
 		total_data = pd.concat([
 			body_len, punct, vect
@@ -81,4 +83,4 @@ def predict():
 	return render_template('predict.html', prediction=my_prediction)
 
 if __name__ == '__main__':
-	app.run(post=4000)
+	app.run(port=4000)

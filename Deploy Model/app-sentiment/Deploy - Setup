@@ -32,3 +32,12 @@ run: docker run -d -p 443:443 -p 81:81 -p 22:22 --name gitlab gitlab/gitlab-ce
 run : docker ps -a
 run : docker start contaier-id 
 
+Create flask application
+
+Create Docker file 
+
+Create requiremnts.txt
+
+Push to github
+
+Run: docker build -t app-sentiment:v1 .

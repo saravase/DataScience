@@ -141,6 +141,7 @@ Reinforcement vs Supervised/ Un:
     2. Environemnt unknown environment | known environment
     3. In trainig explore the environment | Find the pattern
     4. Goal determining the best policy | Goal determining the best model
+
 Recommendation Systems:
 Types:
     	Content Based:

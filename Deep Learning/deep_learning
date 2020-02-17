@@ -1,0 +1,92 @@
+﻿
+Neural Network:
+
+	input(x) + some hidden features(neurons) + output(y)
+
+Supervised Learning:
+
+	Labeled dataset (Dataset contain both input and output)
+
+	Ex:
+		Real Estate			      - SNN 
+		Online advertising        - SNN
+		Photo tagging             - CNN
+		Speech Recongnition       - RNN
+		Machine Translation       - RNN
+		Autonomous Driving System - Custom/ Hybrid
+
+	Structured Data:
+
+		Normal Dataset 
+
+	UnStrcutured Data:
+
+		Audio
+		Image
+		Text
+
+Deep Learning:
+	
+	Performance
+
+		Traditional - grow some amount of performance. then go constant 
+
+		S NN - better than traditional
+		M NN - better than S NN
+		L NN - better than L NN
+
+	Performance Scale:
+
+		Data
+		Computation   - GPU or CPU
+		Algorithms    - Sigmoid and Relu(Rectified Linear unit)
+
+	Process:
+		Idea - Code   - Experiment
+
+
+	 Forward Propagation vs Backward Propagation
+
+	 Ex:
+	 	Logistic regression - Binnary Classification
+
+	 	Input Matrix:
+
+	 		n[no of count] x m [no of features]
+
+	 	Output Matrix:
+
+	 		1 x m matrics
+
+Logistic Regression:
+
+input:n x m
+parameters : w, b
+output : y hat = sigma ( w^T x + b ) 
+
+W^T x + b => z
+
+y hat = sigma(z)
+
+sigma(z) = 1 / 1 + e^-z
+
+if z large , sigma(z) close to 0
+if z large -number , sigma(z) very close to 0
+
+
+
+Hyperparameter Tuning:
+
+Regularization:
+
+Optimization:
+
+Structuring your machine learning project:
+
+Convolutional Neural Networks:
+
+Natural Language Processing:
+
+RNN:
+
+LSTM:

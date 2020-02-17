@@ -1,0 +1,19 @@
+Pytorch
+Replacement for numpy to use GPUs Maximum flexibility and speed
+
+Tensor
+Similar to ndarray. Used to accelate the GPU.
+
+Basics:
+
+torch.empty(5,5)
+torch.rand(3,3)
+torch.zeros(2,2, dtype=torch.int)
+x.new_ones(2,2,dtype=torch.int)
+torch.rand_like(x,dtype=torch.float)
+
+
+Tensor properties:
+x.size()
+
+
